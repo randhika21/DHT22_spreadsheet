@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard DHT22</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="bg-dark text-white d-flex justify-content-between align-items-center">
+        <button class="btn btn-light" id="toggleSidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h3 class="mb-0">Dashboard DHT22</h3>
+        <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <h4 class="text-white text-center">Menu</h4>
+        <div class="list-group">
+            <a href="index.html" class="list-group-item list-group-item-action bg-dark text-white">Dashboard</a>
+            <a href="data.html" class="list-group-item list-group-item-action bg-dark text-white">Data Suhu dan Kelembaban</a>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="content" id="content">
+        <div class="container">
+            <div class="row mt-4 mb-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Data Suhu</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <h2 id="currentTemperature">0 °C</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Data Kelembaban</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <h2 id="currentHumidity">0 %</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="chart-container" class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Chart Suhu</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="temperatureChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Chart Kelembaban</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="humidityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Dashboard DHT22. All rights reserved.</p>
+        <p>Created by Randhika</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

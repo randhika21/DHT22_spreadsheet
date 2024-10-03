@@ -1,0 +1,81 @@
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+    transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+#toggleSidebar {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+    transition: transform 0.2s;
+}
+#toggleSidebar:hover {
+    transform: scale(1.1);
+}
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    left: -250px;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    background-color: #343a40;
+    transition: left 0.3s ease;
+}
+.sidebar.active {
+    left: 0;
+}
+.sidebar a {
+    color: white;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 50;
+}
+.content {
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+}
+.content.shifted {
+    margin-left: 250px;
+}
+header {
+    padding: 1px 20px; /* Header padding */
+    position: sticky; /* Make header sticky */
+    top: 0; /* Stick to the top */
+    z-index: 10; /* Ensure it stays on top */
+}
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
+body.dark-mode .card {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+#temperatureChart, #humidityChart {
+    width: 100% !important; /* Ensure full width */
+    height: 100% !important; /* Set a fixed height */
+}
+@media (max-width: 576px) {
+    .table {
+        font-size: 0.55rem;
+    }
+    .table th, .table td {
+        white-space: nowrap;
+    }
+}

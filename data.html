@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard DHT22</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="data.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+
+    <header class="bg-dark text-white d-flex justify-content-between align-items-center">
+        <button class="btn btn-light" id="toggleSidebar">
+            <i class="fas fa-bars"></i>
+        </button>        
+        <h3 class="mb-0">Dashboard DHT22</h3>
+        <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <h4 class="text-white text-center">Menu</h4>
+        <div class="list-group">
+            <a href="index.html" class="list-group-item list-group-item-action bg-dark text-white">Dashboard</a>
+            <a href="data.html" class="list-group-item list-group-item-action bg-dark text-white">Data Suhu dan Kelembaban</a>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="content" id="content">
+        <div class="container-fluid">
+            <div class="card mt-4" id="status-relay">
+                <div class="card-header d-flex align-items-center">
+                    <h5>Data</h5>
+                    <button id="downloadBtn" class="btn btn-primary ml-auto">Download Data</button>
+                </div>
+                <div class="card-body">
+                    <div class="form-group d-flex flex-column flex-sm-row align-items-start">
+                        <label for="dataCountSelect" class="mr-2">Tampilkan Data:</label>
+                        <select id="dataCountSelect" class="form-control mb-2 mb-sm-0" style="width: 150px; margin-right: 10px;">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <label for="dateFilter" class="mr-2">Date:</label>
+                        <input type="date" id="dateFilter" class="form-control mb-2 mb-sm-0" style="width: 150px; margin-right: 10px;">
+                        
+                        <label for="timeFilter" class="mr-2">Time:</label>
+                        <input type="text" id="timeFilter" class="form-control mb-2 mb-sm-0" placeholder="HH:MM:SS AM/PM" style="width: 160px; margin-right: 10px;">    
+
+                        <div id="applyFilters"></div>
+                    </div>
+                    <div class="form-group d-flex flex-column flex-sm-row align-items-start">
+                        <label for="temperatureFilter" class="mr-2">Temperature:</label>
+                        <input type="number" id="temperatureFilterMin" class="form-control mb-2 mb-sm-0" placeholder="Min (°C)" style="width: 100px; margin-right: 10px;">
+                        <input type="number" id="temperatureFilterMax" class="form-control mb-2 mb-sm-0" placeholder="Max (°C)" style="width: 100px; margin-right: 10px;">
+                        
+                        <label for="humidityFilter" class="mr-2">Humidity:</label>
+                        <input type="number" id="humidityFilterMin" class="form-control mb-2 mb-sm-0" placeholder="Min (%)" style="width: 100px; margin-right: 10px;">
+                        <input type="number" id="humidityFilterMax" class="form-control mb-2 mb-sm-0" placeholder="Max (%)" style="width: 100px; margin-right: 10px;">
+                        
+                        <div id="applyFilters"></div>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Temperature (°C)</th>
+                                <th>Humidity (%)</th>
+                            </tr>
+                        </thead>                        
+                        <tbody id="data-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>            
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Dashboard DHT22. All rights reserved.</p>
+        <p>Created by Randhika</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="data.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>
